@@ -4,20 +4,68 @@
 		"selected_items":
 		[
 			[
-				"bac",
+				"get",
+				"getFilesRecursive"
+			],
+			[
+				"font",
+				"font-variant"
+			],
+			[
+				"ba",
 				"background-color"
 			],
 			[
-				"back",
-				"background-size"
+				"text",
+				"text-decoration"
 			],
 			[
-				"con",
-				"contactus"
+				"c",
+				"disc"
+			],
+			[
+				"table",
+				"table-cell"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"gsc",
+				"gsc-search-button"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"m",
+				"main-menu"
 			],
 			[
 				"mar",
 				"margin-top"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"b",
+				"border-top"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"con",
+				"contactus"
 			],
 			[
 				"bord",
@@ -25,10 +73,6 @@
 			],
 			[
 				"margin-",
-				"margin-top"
-			],
-			[
-				"margin",
 				"margin-top"
 			],
 			[
@@ -42,10 +86,6 @@
 			[
 				"col",
 				"color"
-			],
-			[
-				"font",
-				"font-size"
 			],
 			[
 				"sl",
@@ -70,10 +110,6 @@
 			[
 				"border",
 				"border-bottom"
-			],
-			[
-				"get",
-				"getCookie"
 			],
 			[
 				"re",
@@ -137,7 +173,7 @@
 			],
 			[
 				"in",
-				"input\tTag"
+				"input	Tag"
 			],
 			[
 				"select",
@@ -329,7 +365,7 @@
 			],
 			[
 				"arr",
-				"array\t$… = array (…)"
+				"array	$… = array (…)"
 			],
 			[
 				"categ",
@@ -349,7 +385,7 @@
 			],
 			[
 				"for",
-				"foreach\tforeach …"
+				"foreach	foreach …"
 			],
 			[
 				"str_rep",
@@ -408,89 +444,27 @@
 	"buffers":
 	[
 		{
-			"file": "imsmanifest.xml",
+			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 1149,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "---\nlayout: default\ntitle:  Welcome\n---\n\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>Certification form</title>\n<style type=\"text/css\">\n<!--\n*{\n  margin: 0;\n  padding: 0;\n}\nbody {\n  background: #333333;\n  padding: 2em;\n  font-family: Arial, Helvetica, sans-serif;\n  font-size: small;\n  text-align: center;\n}\n\nform {\n  background: #F8F8F8;\n  width: 500px;\n  padding: 2em;\n  margin-right: auto;\n  margin-left: auto;\n  border-top: 1px solid #FFFFFF;\n  border-right: 1px solid #FFFFFF;\n  border-bottom: 1px solid #CCCCCC;\n  border-left: 1px solid #CCCCCC;\n}\n\nfieldset {\n  margin-bottom: 10px;\n  border: 1px solid #DDD;\n  padding-right: 1em;\n  padding-left: 1em;\n}\n\nlegend {\n  font-weight: bold;\n  margin: 0px;\n  padding: 3px 6px;\n  border: 1px solid #DDDDDD;\n  background: #EFEFEF;\n}\n\np {\n  padding: 2em;\n}\n\ninput  {\n  padding: 10px 5px;\n  font-weight: bold;\n  color: #339900;\n}\n\n#learnername {\n   font-weight: bold;\n}\n-->\n</style>\n\n<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>\n<script type=\"text/javascript\">\n\nvar scorm = pipwerks.SCORM;  //Shortcut\nvar lmsConnected = false;\n\n\nfunction handleError(msg){\n   alert(msg);\n   window.close();\n}\n\n\nfunction initCourse(){\n\n   //scorm.init returns a boolean\n   lmsConnected = scorm.init();\n   \n   //If the scorm.init function succeeded...\n   if(lmsConnected){\n   \n      //Let's get the completion status to see if the course has already been completed\n      var completionstatus = scorm.get(\"cmi.core.lesson_status\");\n      \n      //If the course has already been completed...\n      if(completionstatus === \"completed\" || completionstatus === \"passed\"){\n      \n         //...let's display a message and close the browser window\n         handleError(\"You have already completed this course. You do not need to continue.\");\n      \n      }\n   \n      //Now let's get the username from the LMS\n      var learnername = scorm.get(\"cmi.core.student_name\");\n   \n      //If the name was successfully retrieved...\n      if(learnername){  \n      \n         //...let's display the username in a page element named \"learnername\"\n         document.getElementById(\"learnername\").innerHTML = learnername; //use the name in the form\n      \n      }\n   \n   //If the course couldn't connect to the LMS for some reason...\n   } else {\n   \n      //... let's alert the user then close the window.\n      handleError(\"Error: Course could not connect with the LMS\");\n   \n   }\n   \n}\n\n\nfunction setComplete(){\n\n   //If the lmsConnection is active...\n   if(lmsConnected){\n   \n      //... try setting the course status to \"completed\"\n      var success = scorm.set(\"cmi.core.lesson_status\", \"completed\");\n      \n      //If the course was successfully set to \"completed\"...\n      if(success){\n      \n         //... disconnect from the LMS, we don't need to do anything else.\n         scorm.quit();\n      \n      //If the course couldn't be set to completed for some reason...\n      } else {\n   \n         //alert the user and close the course window\n         handleError(\"Error: Course could not be set to complete!\");\n   \n      }\n   \n   //If the course isn't connected to the LMS for some reason...\n   } else {\n   \n      //alert the user and close the course window\n      handleError(\"Error: Course is not connected to the LMS\");\n   \n   }\n\n}\n\n\nfunction initForm(){\n\n  document.getElementById(\"myform\").onsubmit = function (){\n   \n    this.innerHTML = \"Thank you, your selection has been recorded. You may close this window.\";\n  \n    setComplete();\n   \n    return false; // This prevents the browser from trying to post the form results\n\n  }\n   \n}\n\nwindow.onload = function (){\n\n  initCourse();\n  initForm();\n\n}\n\n</script>\n\n</head>\n\n<body>\n<form id=\"myform\" name=\"myform\" method=\"post\" action=\"\">\n  <fieldset>\n  <legend>Please indicate your choice</legend>\n      <p>I, <span id=\"learnername\">[name here]</span>, certify that I have read the materials presented to me.</p>\n      <p><input type=\"submit\" name=\"submit\" id=\"submit\" value=\"Yes, I agree\"  /></p>\n  </fieldset>\n</form>\n</body>\n</html>\n\n",
-			"file": "index.md",
-			"file_size": 4228,
-			"file_write_time": 131263704445719226,
-			"settings":
-			{
-				"buffer_size": 4228,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_config.yml",
-			"settings":
-			{
-				"buffer_size": 968,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_site/_pages/three/index.html",
-			"settings":
-			{
-				"buffer_size": 822,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_site/_pages/index.html",
-			"settings":
-			{
-				"buffer_size": 4923,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_includes/header.html",
-			"settings":
-			{
-				"buffer_size": 281,
-				"encoding": "UTF-8",
+				"buffer_size": 30,
 				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
-	"build_system_choices":
-	[
-	],
-	"build_varint": "",
 	"command_palette":
 	{
-		"height": 92.0,
-		"last_filter": "remov",
+		"height": 392.0,
 		"selected_items":
 		[
 			[
-				"remov",
-				"Package Control: Remove Package"
-			],
-			[
-				"instal",
-				"Package Control: Install Package"
+				"match",
+				"Emmet: Go to Matching Pair"
 			],
 			[
 				"in",
 				"Package Control: Install Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Discover Packages"
 			],
 			[
 				"json",
@@ -521,6 +495,10 @@
 				"Package Control: Install Package"
 			],
 			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
 				"Package Control: p",
 				"Package Control: Discover Packages"
 			],
@@ -529,15 +507,11 @@
 				"Code Folding: Fold Tag Attributes"
 			]
 		],
-		"width": 485.0
+		"width": 449.0
 	},
 	"console":
 	{
-		"height": 139.0,
-		"history":
-		[
-			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
-		]
+		"height": 139.0
 	},
 	"distraction_free":
 	{
@@ -548,158 +522,152 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/home/markberthelemy/Documents/Code/jekyll-scorm",
-		"/home/markberthelemy/Documents/Code/jekyll-scorm/_includes",
-		"/home/markberthelemy/Documents/Code/jekyll-scorm/_pages",
-		"/home/markberthelemy/Documents/Code/jekyll-scorm/_pages/three",
-		"/home/markberthelemy/Documents/Code/jekyll-scorm/_pages/two",
-		"/home/markberthelemy/Documents/Code/jekyll-scorm/_site",
-		"/home/markberthelemy/Documents/Code/jekyll-scorm/_site/_pages",
-		"/home/markberthelemy/Documents/Code/jekyll-scorm/_site/_pages/three",
-		"/home/markberthelemy/Documents/Code/jekyll-scorm/_site/_pages/two"
-	],
 	"file_history":
 	[
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/themes/Intensely/index.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_layouts/home.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_includes/top-menu.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_sliders/slider1.md",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_includes/head.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_sliders/slider2.md",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_config.yml",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_includes/footer.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_layouts/default.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_pages/Calendar/index.md",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_layouts/page.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_pages/contact/index.md",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_pages/index.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/style.css",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_includes/header.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/.gitignore",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_includes/contact.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_includes/javascripts.html",
-		"/home/markberthelemy/Documents/Code/wyver-solutions.github.io/_config.yml",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/Gemfile",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/index.html",
-		"/home/markberthelemy/Documents/Code/belpercommunitychurch/_build-instructions.txt",
-		"/home/markberthelemy/Documents/Code/wyver-solutions.github.io/20-about.md",
-		"/home/markberthelemy/Documents/Code/wyver-solutions.github.io/_includes/associates.html",
-		"/home/markberthelemy/Documents/Code/wyver-solutions.github.io/_posts/2016-12-02-learning-materials-quality-assurance.md",
-		"/home/markberthelemy/Documents/Code/wyver-solutions.github.io/.gitignore",
-		"/home/markberthelemy/Documents/Code/wyver-solutions.github.io/Gemfile",
-		"/home/markberthelemy/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
-		"/home/markberthelemy/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
-		"/Users/markberthelemy/Documents/Code/blackshields/js/custom.js",
-		"/Users/markberthelemy/Documents/Code/blackshields/css/style.css",
-		"/Users/markberthelemy/Documents/Code/blackshields/css/overrides.css",
-		"/Users/markberthelemy/Documents/Code/blackshields/index.html",
-		"/Users/markberthelemy/temp/python/ex1.py",
-		"/Users/markberthelemy/temp/python/data.txt",
-		"/Users/markberthelemy/Documents/Code/meteor/questionnaire/lib/setup.js",
-		"/Users/markberthelemy/Documents/Code/meteor/questionnaire/client/templates/listQuestions.html",
-		"/Users/markberthelemy/Documents/Code/meteor/questionnaire/server/methods.js",
-		"/Users/markberthelemy/Documents/Code/meteor/questionnaire/client/templates/responderInfo.html",
-		"/Users/markberthelemy/Documents/Code/meteor/questionnaire/client/templates/answerQuestionsForm.html",
-		"/Users/markberthelemy/Documents/Code/meteor/questionnaire/client/templates/addQuestion.html",
-		"/Users/markberthelemy/Documents/Code/meteor/questionnaire/client/helpers.js",
-		"/Users/markberthelemy/Documents/Code/meteor/questionnaire/questionnaire.html",
-		"/Users/markberthelemy/Documents/Code/content-creation-landscape/index.html",
-		"/Users/markberthelemy/Documents/Code/content-creation-landscape/readme.md",
-		"/Users/markberthelemy/Documents/Code/node-xAPI-bulk-statements/generate.js",
-		"/Users/markberthelemy/Google Drive/Wyver Solutions/Clients/Capita/Axelos/Axelos-CPD-project/xAPI/xAPI definitions/mmtbitbucket/readme.md",
-		"/Users/markberthelemy/Library/Application Support/Sublime Text 2/Packages/User/Markdown (Standard).sublime-settings",
-		"/Users/markberthelemy/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/markberthelemy/Library/Application Support/Sublime Text 2/Packages/Pretty JSON/Pretty JSON.sublime-settings",
-		"/Users/markberthelemy/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/markberthelemy/Library/Application Support/Sublime Text 2/Packages/JSON Reindent/JSONReindent.sublime-settings",
-		"/Users/markberthelemy/Library/Application Support/Sublime Text 2/Packages/MarkdownEditing/Markdown (Standard).sublime-settings",
-		"/Users/markberthelemy/Library/Application Support/Sublime Text 2/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/Capita/Axelos/Axelos-CPD-project/xAPI/examples/actor.json",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/Capita/Axelos/Axelos-CPD-project/xAPI/examples/joined.json",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/Capita/Axelos/Axelos-CPD-project/xAPI/examples/actor-account.json",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/Capita/Axelos/Axelos-CPD-project/xAPI/examples/authority.json",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/Capita/Axelos/Axelos-CPD-project/xAPI/examples/left.json",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/Capita/Axelos/Axelos-CPD-project/xAPI/examples/experienced.json",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/Capita/Axelos/Axelos-CPD-project/xAPI/examples/cancelled-planned-learning.json",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/Capita/Axelos/Axelos-CPD-project/xAPI/examples/planned.json",
-		"/Users/markberthelemy/temp/xAPIWrapperTester-master/js/config.js",
-		"/Users/markberthelemy/Google Drive/Wyver Solutions/Clients/Capita/Axelos/Axelos-CPD-project/xAPI/outputs-from-mmt/Add-planned.js",
-		"/Users/markberthelemy/Documents/Code/html templates/html5up-prologue/index.html",
-		"/Users/markberthelemy/Documents/Code/html templates/html5up-prologue/js/jquery.scrollzer.min.js",
-		"/Users/markberthelemy/Documents/Code/bourgeal2/css/style.css",
-		"/Users/markberthelemy/Documents/Code/bourgeal2/CNAME",
-		"/Users/markberthelemy/Documents/Code/bourgeal2/index.html",
-		"/Users/markberthelemy/Documents/Code/microblog/run.py",
-		"/Users/markberthelemy/Documents/Code/microblog/db_create.py",
-		"/Users/markberthelemy/Documents/Code/microblog/db_migrate.py",
-		"/Users/markberthelemy/Documents/Code/microblog/db_upgrade.py",
-		"/Users/markberthelemy/Documents/Code/microblog/db_downgrade.py",
-		"/Users/markberthelemy/Documents/Code/microblog/app/templates/index.html",
-		"/Users/markberthelemy/Documents/Code/Peter/python1.py",
-		"/Users/markberthelemy/Documents/Code/Peter",
-		"/Users/markberthelemy/Documents/Code/LearningTechConsultantsNetwork/css/style.css",
-		"/Users/markberthelemy/Documents/Code/LearningTechConsultantsNetwork/index.html",
-		"/Users/markberthelemy/Documents/Code/berthelemy-family/index.html",
-		"/Users/markberthelemy/Documents/Code/jekyll-test-site/_site/index.html",
-		"/Users/markberthelemy/Documents/Code/mb_flowtime.js/examples/Career-planner/index.html",
-		"/Users/markberthelemy/Documents/Code/mb-jekyll-noita/about/index.md",
-		"/Users/markberthelemy/Documents/Code/Javascript-learning/primes.js",
-		"/Users/markberthelemy/Documents/Code/angularjs-tutorial/angular-phonecat/app/index.html",
-		"/Users/markberthelemy/Documents/Code/angularjs-tutorial/angular-phonecat/app/untitled",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/ELN/Database-exports-06052014/orders.csv",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/ELN/Database-exports-06052014/order-comments",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/ELN/Database-exports-06052014/users.csv",
-		"/Users/markberthelemy/temp/belper-church-email-list.csv",
-		"/Users/markberthelemy/Documents/Websites/moodle2/config.php",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/build/readme.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/upgrading.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/about_xerte.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/managing_a_xerte_site.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/installing_xerte.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/creating_learning_content.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/developer_guide.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/ldap.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/index-test.php",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docDisplay/config.php",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/LDAP.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/bugfixes.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/moodle_integration_readme.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/LTI Documentation.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/integration.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docDisplay/css/simple-sidebar.css",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/05_about_xerte_online_toolkit.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/01_home.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/10_installing_xerte_online_toolkits.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/index.php",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/25_upgrading.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/home.md",
-		"/Users/markberthelemy/Documents/Websites/xerteonlinetoolkits-fork/documentation/docs/Test table",
-		"/Users/markberthelemy/Documents/Websites/githubWikiDisplay/index.php",
-		"/Users/markberthelemy/Documents/Websites/githubWikiDisplay/TODO.md",
-		"/Users/markberthelemy/Documents/Websites/githubWikiDisplay/config.php",
-		"/Users/markberthelemy/Documents/Websites/githubWikiDisplay/wiki/home.md",
-		"/Users/markberthelemy/Documents/Websites/githubWikiDisplay/sidebar.php",
-		"/Users/markberthelemy/Documents/Websites/githubWikiDisplay/githubWikiDisplay.sublime-project",
-		"/Users/markberthelemy/Documents/Websites/githubWikiDisplay/wiki/markdown 1 file.mdown",
-		"/Users/markberthelemy/temp/Why is it so complicated?",
-		"/Users/markberthelemy/temp/Is Moodle the only answer?",
-		"/Users/markberthelemy/Documents/Wyver Solutions/wordpress_plugins",
-		"/Users/markberthelemy/temp/testGit/test.txt",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/i-to-i/Project/i-to-i Newdle project copy.merlin2",
-		"/Users/markberthelemy/Documents/Wyver Solutions/Clients/NIHR/Xerte/customStyle.css",
-		"/Users/markberthelemy/Google Drive/KPMG_NHS/Virtual Campus/Support/cookies policy 0.2.html"
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-personal-reflections-on-learning/credit_for_the_term_learning_conversations.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-personal-reflections-on-learning/elevator_pitch_-_expanded.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-personal-reflections-on-learning/face-to-face_training_and_me.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/03-online-learning/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/list-files.js",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/.gitignore",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/.bookignore",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-personal-reflections-on-learning/cool_cat_teacher_blog_how_to_create_your_circle_of.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-personal-reflections-on-learning/command_&_control_vs_learning_anarchy.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-personal-reflections-on-learning/changes_in_the_last_ten_years.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-personal-reflections-on-learning/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/SUMMARY.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-me-as-a-learner/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/25-social-networks/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/70-software/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/35-publishing/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/25-social-networks.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/30-learning-design/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/75-tools/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/80-society/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/80-society.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/85-project-management/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/90-education/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_posts_to_use/elearnspace_connectivism_a_learning_theory_for_the.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/90-education.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/85-project-management.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/75-tools.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/40-conferences/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/30-learning-design.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/30-learning-design/learning-made-easy.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/30-learning-design/designing-a-large-scale-learning-programme.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/70-software/to-open-source-or-not.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/styles/pdf.css",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-online-learning/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-online-learning/we-want-to-buy-a-learning-module.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-online-learning/the-king-is-dead.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/20-org-ld.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/20-org-ld/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/70-software.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-online-learning/characteristics-of-good-elearning.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-online-learning.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/book.json",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/package.json.bak",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/package.json",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/Gruntfile.js",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/10-internet/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/15-knowledge/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/10-internet.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/05-me-as-learner.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/05-me-as-a-learner/README.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/02-online-learning/Collaborative-Learning.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_posts_to_use/what_sort_of_professional_am_i.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/book.pdf",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/chapters/40-conferences.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_posts_to_use/collaborative_learning_elearning_is_not_epublishin.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_posts_to_use/cloud_systems_-_security_questions.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_posts_to_use/click_here_for_usability_advice.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_posts_to_use/choosing_and_using_social_software.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_posts_to_use/choosing_proprietary_over_open_source.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/come_on_in,_the_waters_lovely.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/commercial_publishing_in_a_networked_world.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/computing_and_ict_in_schools.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/configuration_management_systems_-_boring_but_esse.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/courses_and_content.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/creativity,_problem_finding,_education_and_trainin.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/death_of_the_one_hit_wonder.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/developing_your_personal_support_network.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/dreams_of_an_alternative_education_curriculum.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/elearning_learning.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/elevator_pitch_-_expanded.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/face-to-face_training_and_me.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/from_formal_courses_to_social_learning.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/games_based_learning_-_just_for_kids.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/ideas_for_an_unconference_process.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/internal_communication_-_learning_from_the_web.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/is_your_home_network_safe.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/it_toolkit_for_a_learning_organisation.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/learning_&_development_and_internal_communications.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/lt12uk_conference_presentation_engaging_the_unwill.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/meme_random_things.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/mobile_content_delivery_2.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/moodle_running_on_an_asus_eeepc.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/more_bang_for_your_buck.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/network_publishing.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/new_learning_models.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/organisational_learning_today_-_concept_map.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/planning_for_scale.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/rbcs_and_classroom_practice.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/reflections_on_the_oxford_teachmeet_fishbowl.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/rss,_blogs_and_other_stuff_in_corporate_learning_a.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/system_rollouts_and_effective_networked_communicat.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/the_art_of_user_support.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/the_demise_of_global_conversation.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/the_state_of_corporate_learning_and_development.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/twitter_explorations.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/what_did_the_romans_ict_do_for_us.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/what_is_the_purpose_of_education.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/who_pays_your_project_manager.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/why_search_is_critical.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_posts_to_use/you_dont_need_photoshop.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_source-files/exportlc.php.html",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/a_safe_social_network_for_schools.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/being_creative_in_a_digital_world_-_follow_up.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/big_issue_bike_ride_-_finished.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/campaign_for_effective_elearning.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/communication_&_collaboration_in_the_21st_century.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/departmental_roles_in_the_learning_organisation.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/dilbert_on_social_media.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/eln_open_source_day.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/eon_smart_meter_and_my_wireless_network.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/free_event_the_role_of_rss_&_blogs_in_learning_&_d.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/free_our_content.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/fusion_universal_sponsors_the_big_issue_london_to_.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/ihmc_cmaptools_-_concept_map_cmaptools_-_home_page.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/jobs_available_for_the_uk_census.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/lee_myers_in_concert.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/mini-moodlemoot_at_learning_technologies_2010.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/national_curriculum_review_meeting_-_chesterfield.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/review_moodle_administration_book.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/review_np_training_works.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/review_of_balsamiq_mockups.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/review_of_excel_everest_-_learn_excel_through_exce.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/stop_the_database_state_no2id.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/tasmanias_essential_learning.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/teemu_arina_-_informal_supported_by_formal_learnin.md",
+		"/Users/markberthelemy/Documents/Code/Learning Conversations book/_book/_Unused chapters/thanks_to_xyleme.md"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
+			"/Users/markberthelemy/Documents/Code/Learning Conversations book",
+			"/Users/markberthelemy/Documents/Code/wyver-solutions",
+			"/Users/markberthelemy/Documents/Code/wyver-solutions,-*/_site.txt",
+			"/Users/markberthelemy/Documents/Code/wyver-solutions,-_site.txt",
+			"/Users/markberthelemy/Documents/Code/wyver-solutions",
+			"/Users/markberthelemy/Documents/Code/wyver-solutions/_posts",
 			"<open folders>",
 			"/Users/markberthelemy/Documents/Code/microblog/app",
 			"/Users/markberthelemy/temp/24tips wp",
@@ -711,10 +679,60 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"mission",
-			"family",
-			"css.map",
-			"1020563",
+			"exportlc.php_files",
+			"boxbl",
+			"thumb",
+			"font-s",
+			"four",
+			".small",
+			"foot",
+			"font-size",
+			"13px",
+			"&",
+			"\"",
+			"instance",
+			"###",
+			">",
+			"<",
+			"###",
+			"  ",
+			"rel=nofollow ",
+			"<em>",
+			"<p>",
+			"</p>",
+			"</strong></p>",
+			"##",
+			"<p><strong>",
+			"'",
+			"img",
+			"assets",
+			"'",
+			"•   ",
+			"–",
+			"-",
+			"side",
+			"mdash",
+			"troub",
+			"time",
+			"testimonials",
+			"nav-bar",
+			"nav-wrap",
+			"menu",
+			"Meet our team",
+			"55a2a6",
+			"###",
+			"##",
+			"#",
+			"base",
+			"L&D ",
+			" &amp;D ",
+			" & ",
+			"&D",
+			" & ",
+			"&",
+			"&amp",
+			"&",
+			"ASSET_PATH",
 			"kitch",
 			"test",
 			"border",
@@ -788,57 +806,7 @@
 			"type",
 			"                        ",
 			"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ",
-			"active",
-			"adapt",
-			"active",
-			"scroll",
-			"-->\n",
-			"map",
-			"alt=\"\"",
-			"the-house",
-			"house-fr",
-			"settee",
-			"front",
-			"see",
-			"kitch",
-			"clear",
-			"TestForm",
-			"overf",
-			"navbar",
-			"<td></td>",
-			"id=\"tabs",
-			"      <",
-			"thumb",
-			"1",
-			"eval(",
-			"eval",
-			" ",
-			" >",
-			"style=\"(.*?)\"",
-			"homePage",
-			"homePageURL",
-			"wiki",
-			"homeP",
-			"|",
-			"        ",
-			"Managing a Xerte site \n\t\tAuthentication \n\t\tManaging accounts \n\t\tRoles and permissions \n\t\tSecurity \n\t\tPerformance \n\t\tBackup \n\t\tSite appearance \n        ",
-			"Managing a Xerte site \n\t\tAuthentication \n\t\tManaging accounts \n\t\tRoles and permissions \n\t\tSecurity \n\t\tPerformance \n\t\tBackup \n\t\tSite appearance \n\t\t",
-			"homepage",
-			"homePageURL",
-			"home",
-			"pageT",
-			";\n",
-			"•   ",
-			"arg",
-			" width=\"...\"",
-			" width=\"298\"",
-			" width=\"145\"",
-			"</ul>",
-			"</li>",
-			"<a href=\"http://localhost/DefAc_NMP/index.html#\" style=\"margin: 0px; padding: 5px; color: rgb(102, 102, 102); text-decoration: none; border: 1px solid rgb(204, 204, 204); font-family: arial, verdana, tahoma; font-size: 11px; display: inline-block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; -webkit-transition: all 0.5s;\"></a>",
-			"<li style=\"margin: 0px; padding: 20px 5px 0px; float: left; text-align: center; list-style-type: none; position: relative; -webkit-transition: all 0.5s;\">",
-			"<ul style=\"margin: 0px 0px 0px 25px; padding: 20px 0px 0px; position: relative; -webkit-transition: all 0.5s; color: rgb(51, 51, 51); font-family: 'helvetica neue', helvetica, arial, sans-serif; font-size: 14px; line-height: 20px; text-align: center;\">\n                            <li style=\"margin: 0px; padding: 20px 5px 0px; float: left; text-align: center; list-style-type: none; position: relative; -webkit-transition: all 0.5s;\">\n                                <a href=\"http://localhost/DefAc_NMP/index.html#\" style=\"margin: 0px; padding: 5px; color: rgb(0, 0, 0); text-decoration: none; outline: 0px; border: 1px solid rgb(148, 160, 180); font-family: arial, verdana, tahoma; font-size: 11px; display: inline-block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; -webkit-transition: all 0.5s; background-color: rgb(200, 228, 248);\"></a>",
-			"<br>"
+			"active"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -846,6 +814,34 @@
 		"regex": true,
 		"replace_history":
 		[
+			"assets",
+			"six",
+			">",
+			"<",
+			" ",
+			"  ",
+			" ",
+			"### ",
+			"",
+			"\\n",
+			"\\n\\n",
+			"\\r\\r",
+			"\\r",
+			"",
+			"## ",
+			"##",
+			"&rsquo;",
+			"/post-images/2014/11",
+			"+ ",
+			"&ndash;",
+			"1d76c3",
+			"###",
+			"##",
+			"L&amp;D",
+			" &amp; ",
+			" &amp;D ",
+			"&amp;D",
+			" &amp;",
 			"/activitytype/",
 			"/activitytypes/",
 			"/schema/",
@@ -871,181 +867,32 @@
 	"groups":
 	[
 		{
-			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "imsmanifest.xml",
-					"semi_transient": false,
+					"file": ".gitignore",
 					"settings":
 					{
-						"buffer_size": 1149,
+						"buffer_size": 30,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1055,
-								1055
+								30,
+								30
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4228,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4227,
-								4227
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3617.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "_config.yml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 968,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								400,
-								400
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "_site/_pages/three/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 822,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								331,
-								331
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "_site/_pages/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4923,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "_includes/header.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 281,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1053,7 +900,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 0.0
 	},
 	"input":
 	{
@@ -1086,21 +933,14 @@
 	{
 		"height": 112.0
 	},
-	"output.find_results":
-	{
-		"height": 0.0
-	},
-	"pinned_build_system": "",
-	"project": "jekyll-scorm.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
 	{
 		"height": 0.0,
-		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -1108,33 +948,20 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
-		"last_filter": "",
+		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"/Users/markberthelemy/Documents/Code/wyver-solutions/wyvers-solutions.sublime-project"
+			]
 		],
-		"width": 0.0
-	},
-	"select_symbol":
-	{
-		"height": 0.0,
-		"last_filter": "",
-		"selected_items":
-		[
-		],
-		"width": 0.0
-	},
-	"selected_group": 0,
-	"settings":
-	{
+		"width": 380.0
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 272.0,
-	"status_bar_visible": true,
-	"template_settings":
-	{
-	}
+	"status_bar_visible": true
 }
