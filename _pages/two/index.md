@@ -1,6 +1,7 @@
 ---
 layout: default
-title:  Page Two
+title:  Two
+permalink: 'two/'
 ---
 
 # {{ page.title }}

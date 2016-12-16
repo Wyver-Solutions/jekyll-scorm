@@ -1,8 +1,8 @@
 ###########
 # site.title
 
-title:    'Jekyll Starter Theme V2'
-subtitle: 'Another Static Site Quick Starter Theme'
+title:    'Jekyll-SCORM framework'
+subtitle: 'Based on Pipwerks SCORM wrapper'
 
 
 ## note:
@@ -10,16 +10,14 @@ subtitle: 'Another Static Site Quick Starter Theme'
 #  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
 #    note: for root path use empty string e.g. '' - do NOT include trailing slash e.g. /
 
-path:  '/jekyll-starter-theme-v2'
+path:  '/'
 url:   'http://henrythemes.github.io/jekyll-starter-theme-v2'
 
 
 nav:
-- { title: 'Welcome',              href: '/jekyll-starter-theme-v2/' }
-- { title: 'Page Two',             href: '/jekyll-starter-theme-v2/two.html' }
-- { title: 'Page Three',           href: '/jekyll-starter-theme-v2/three.html' }
-- { title: 'Questions? Comments?', href: 'http://groups.google.com/group/wwwmake' }
-- { title: 'About',                href: 'https://github.com/henrythemes/jekyll-starter-theme-v2' }
+- { title: 'Welcome',              href: './' }
+- { title: 'Page Two',             href: './two/' }
+- { title: 'Page Three',           href: './three/' }
 
 
 #########################
@@ -33,4 +31,9 @@ sass:
 
 exclude:
 - README.md
+- jekyll-scorm-output
 
+include: ["_pages"]
+permalink: /:title/
+
+destination: jekyll-scorm-output

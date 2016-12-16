@@ -4,10 +4,10 @@
   <span class='small'>{{ site.subtitle }}</span>
 </div>
 
-
+{{ base }}
 <div id="nav">
 {% for item in site.nav %}
-  <a href="{{ item.href}}">{{ item.title }}</a>
-  {% if forloop.last %}  {% else %} • {% endif %}
+  <a href="{{ base }}{{ item.href}}">{{ item.title }}</a>
+  {% if forloop.last %}  {% else %} --- {% endif %}
 {% endfor %}
 </div>
