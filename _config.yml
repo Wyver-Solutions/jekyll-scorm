@@ -15,9 +15,9 @@ url:   'http://henrythemes.github.io/jekyll-starter-theme-v2'
 
 
 nav:
-- { title: 'Welcome',              href: './' }
-- { title: 'Page Two',             href: './two/' }
-- { title: 'Page Three',           href: './three/' }
+- { title: 'Welcome',              href: '/' }
+- { title: 'Page Two',             href: '/two/' }
+- { title: 'Page Three',           href: '/three/' }
 
 
 #########################
