@@ -10,9 +10,59 @@
 
 @import 'settings';
 
-/*
- * css styles go here
- */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #ddd;
+  padding: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  text-align: center;
+}
+
+form {
+  background: #F8F8F8;
+  width: 500px;
+  padding: 2em;
+  margin-right: auto;
+  margin-left: auto;
+  border-top: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  border-bottom: 1px solid #CCCCCC;
+  border-left: 1px solid #CCCCCC;
+}
+
+fieldset {
+  margin-bottom: 10px;
+  border: 1px solid #DDD;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+legend {
+  font-weight: bold;
+  margin: 0px;
+  padding: 3px 6px;
+  border: 1px solid #DDDDDD;
+  background: #EFEFEF;
+}
+
+p {
+  padding: 2em;
+}
+
+input  {
+  padding: 10px 5px;
+  font-weight: bold;
+  color: #339900;
+}
+
+#learnername {
+   font-weight: bold;
+}
 
 body {
   font-family: $font-family;
