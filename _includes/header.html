@@ -8,9 +8,14 @@
 
 
 {% include base.html %}
-{% for item in site.nav %}
 
-  <a href="{{ base }}{{ item.href }}index.html">{{ item.title }}</a>
+{% assign pages = site.pages | sort: 'order' %}
+{% for page in pages %}
+{% if page.id >= 1 %}
+	<a href="{{ base }}{{ page.url }}">{{ page.title }}</a>
   {% if forloop.last %}  {% else %} --- {% endif %}
+ {% endif %}
 {% endfor %}
+
+
 </div>

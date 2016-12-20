@@ -14,9 +14,9 @@
 
   <organizations default="wyver">
     <organization identifier="wyver">
-    <title>Jekyll-SCORM framework</title>
+    <title>{{ site.title }}</title>
       <item identifier="CourseItem01" identifierref="SCO-Resource-01" isvisible="true">
-        <title>Jekyll-SCORM framework</title>
+        <title>{{ site.title }}</title>
       </item>
     </organization>
   </organizations>

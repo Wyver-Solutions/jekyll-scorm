@@ -30,7 +30,9 @@ function handleError(msg){
 function initCourse(){
 
    //scorm.init returns a boolean
+ 
    lmsConnected = scorm.init();
+
    
    //If the scorm.init function succeeded...
    if(lmsConnected){
@@ -146,31 +148,33 @@ window.onload = function (){
 
 
 
-  <a href="./index.html">Welcome</a>
+
+
+
+
+	<a href="./">Welcome</a>
    --- 
+ 
 
 
-  <a href="./two/index.html">Page Two</a>
+	<a href="./two/">Page two</a>
    --- 
+ 
 
 
-  <a href="./three/index.html">Page Three</a>
+	<a href="./three/">Page Three</a>
     
+ 
+
+
 
 </div>
 
 
-<div id="content">
-  <form id="myform" name="myform" method="post" action="">
-  <fieldset>
-  <legend>Please indicate your choice</legend>
-      <p>I, <span id="learnername">[name here]</span>, certify that I have read the materials presented to me.</p>
-      <p><input type="submit" name="submit" id="submit" value="Yes, I agree" /></p>
-  </fieldset>
-</form>
+<section id="dynamic">
 
 
-</div>
+</section>
 
 
 <div id="footer">
@@ -178,6 +182,16 @@ window.onload = function (){
 </div>
 
 
+<!-- Included Javascript files -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+<script>
+$(document).ready(function(){
+$('a').click(function(e){
+e.preventDefault();
+$("#dynamic").load($(this).attr('href'));
+});
+});
+</script>
 </body>
 </html>

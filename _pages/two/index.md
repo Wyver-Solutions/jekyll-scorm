@@ -1,10 +1,12 @@
 ---
-layout: default
-title:  Two
+layout: page
+title:  Page two
 permalink: 'two/'
+id: 2
+order: 20
 ---
 
-# {{ page.title }}
+
 
 
 Another sample page.

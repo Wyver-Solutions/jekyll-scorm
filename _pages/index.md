@@ -2,6 +2,8 @@
 layout: default
 title:  Welcome
 permalink: '/'
+id: 1
+order: 10
 ---
 
 
